@@ -21,10 +21,10 @@ const DanzasScreen = ({ isSkeleton, isDark }) => {
 
       {/* Hero Header */}
       <Skeleton name="danzas-hero" loading={isSkeleton} animate={true} color={isDark ? '#262626' : '#e0e0e0'}>
-        <div className="relative rounded-[2rem] overflow-hidden h-48 flex items-end p-8 shadow-2xl">
+        <div className="relative rounded-[2rem] overflow-hidden min-h-[12rem] md:min-h-[16rem] flex items-end p-8 md:p-12 shadow-2xl">
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-orange-900 to-amber-800" />
-          {/* ... (rest of hero header same as before) ... */}
+          
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30">
@@ -32,14 +32,14 @@ const DanzasScreen = ({ isSkeleton, isDark }) => {
               </div>
               <span className="text-orange-300 font-bold text-xs uppercase tracking-[0.2em]">Patrimonio Cultural Vivo</span>
             </div>
-            <h1 className="text-5xl font-black text-white tracking-tight drop-shadow-xl">Danzas</h1>
-            <p className="text-orange-100/80 text-sm font-medium mt-1">Toca el video para vivir la experiencia</p>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight drop-shadow-xl">Danzas</h1>
+            <p className="text-orange-100/80 text-sm md:text-base font-medium mt-1">Toca el video para vivir la experiencia</p>
           </div>
         </div>
       </Skeleton>
 
-      {/* Video Cards */}
-      <div className="flex flex-col gap-6">
+      {/* Video Cards Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {DANZAS.map((danza, index) => (
           <Skeleton key={danza.id} name="danza-card" loading={isSkeleton} animate={true} color={isDark ? '#262626' : '#e0e0e0'}>
             <div className="group relative">

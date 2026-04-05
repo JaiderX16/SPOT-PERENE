@@ -30,10 +30,10 @@ export default function App() {
   const [isSkeleton, setIsSkeleton] = useState(false);
 
   return (
-    <div className={`h-[100dvh] flex justify-center font-sans selection:bg-emerald-200 selection:text-emerald-900 ${isDark ? 'dark bg-stone-900' : 'bg-stone-200/50'}`}>
+    <div className={`h-[100dvh] font-sans selection:bg-emerald-200 selection:text-emerald-900 ${isDark ? 'dark bg-[#121212]' : 'bg-[#faf9f7]'} transition-colors duration-500 overflow-hidden`}>
       
-      {/* Contenedor Principal Adaptable Responsivo */}
-      <div className="w-full xl:max-w-[70%] bg-[#faf9f7] dark:bg-[#121212] flex flex-col relative h-full shadow-2xl overflow-hidden md:border-x border-stone-200/60 dark:border-white/10 transition-colors duration-500">
+      {/* Contenedor Principal Adaptable Responsivo (FULL WIDTH) */}
+      <div className="w-full flex flex-col relative h-full transition-colors duration-500">
         
         {/* Barra Superior */}
         <header className="bg-white/85 dark:bg-[#121212]/85 backdrop-blur-lg pt-6 pb-4 px-6 sticky top-0 z-20 flex justify-between items-center border-b border-stone-200/50 dark:border-white/10 shadow-sm transition-colors duration-500">

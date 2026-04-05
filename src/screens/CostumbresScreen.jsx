@@ -129,13 +129,13 @@ const CostumbresScreen = ({ isSkeleton, isDark }) => {
 
       {/* Hero Banner */}
       <Skeleton name="costumbres-hero" loading={isSkeleton} animate={true} color={isDark ? '#262626' : '#e0e0e0'}>
-        <div className="bg-gradient-to-r from-emerald-900 to-stone-800 p-8 rounded-[2rem] shadow-xl text-white relative overflow-hidden group">
+        <div className="bg-gradient-to-r from-emerald-900 to-stone-800 p-8 md:p-12 lg:p-16 rounded-[2rem] shadow-xl text-white relative overflow-hidden group">
           <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518182170546-076616fd4cb8?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-[10s]" />
           <div className="relative z-10">
-            <h2 className="text-4xl font-black mb-3 flex items-center gap-3">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-3 flex items-center gap-3">
               <Leaf className="w-8 h-8 text-green-400" /> Costumbres
             </h2>
-            <p className="text-stone-300 text-base md:text-lg font-medium max-w-xl">
+            <p className="text-stone-300 text-sm md:text-base lg:text-lg font-medium max-w-2xl">
               Prácticas y estilo de vida arraigados profundamente en nuestra tierra y el día a día comunitario.
             </p>
           </div>
@@ -148,7 +148,7 @@ const CostumbresScreen = ({ isSkeleton, isDark }) => {
       </p>
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
         {COSTUMBRES.map((costumbre) => {
           const c = colorMap[costumbre.color] || colorMap.green;
           return (

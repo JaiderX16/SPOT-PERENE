@@ -153,14 +153,14 @@ const ValoresScreen = ({ isSkeleton, isDark }) => {
 
       {/* Hero Banner */}
       <Skeleton name="valores-hero" loading={isSkeleton} animate={true} color={isDark ? '#262626' : '#e0e0e0'}>
-        <div className="relative h-64 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col justify-end p-8 text-white group">
+        <div className="relative h-64 md:h-80 lg:h-96 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col justify-end p-8 text-white group">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1547471080-7fc2caa6f17f?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-[10s] ease-linear" />
           <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-900/40 to-transparent" />
           <div className="absolute top-0 right-0 p-6 opacity-30">
             <Sun className="w-24 h-24 text-yellow-200" />
           </div>
-          <h1 className="text-5xl font-black mb-3 relative z-10 drop-shadow-lg tracking-tight">Identidad Viva</h1>
-          <p className="text-emerald-50 opacity-95 text-base md:text-lg font-medium relative z-10 drop-shadow-md max-w-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-3 relative z-10 drop-shadow-lg tracking-tight">Identidad Viva</h1>
+          <p className="text-emerald-50 opacity-95 text-sm md:text-base lg:text-lg font-medium relative z-10 drop-shadow-md max-w-3xl">
             Descubre el alma de Perené. Un viaje inmersivo a través de nuestros valores y herencia milenaria protegida por la comunidad.
           </p>
         </div>
@@ -168,7 +168,7 @@ const ValoresScreen = ({ isSkeleton, isDark }) => {
 
       {/* Section title */}
       <div>
-        <h2 className="text-3xl font-black text-emerald-900 dark:text-emerald-400 mb-2 flex items-center gap-3">
+        <h2 className="text-2xl md:text-3xl font-black text-emerald-900 dark:text-emerald-400 mb-2 flex items-center gap-3">
           <Heart className="w-8 h-8 text-red-500" />
           Nuestros Valores
         </h2>
@@ -178,7 +178,7 @@ const ValoresScreen = ({ isSkeleton, isDark }) => {
       </div>
 
       {/* Card Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
         {VALORES.map((val) => {
           const c = colorMap[val.color] || colorMap.emerald;
           return (

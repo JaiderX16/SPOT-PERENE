@@ -15,7 +15,7 @@ const GastronomiaScreen = ({ isSkeleton, isDark }) => {
         <p className="text-sm text-stone-500 dark:text-stone-400 font-medium">Los sabores inconfundibles de la zona:</p>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
         {GASTRONOMIA.map((plato) => (
           <Skeleton key={plato.id} name="gastronomia-card" loading={isSkeleton} animate={true} color={isDark ? '#262626' : '#e0e0e0'}>
             <div 

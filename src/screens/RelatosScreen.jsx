@@ -40,7 +40,7 @@ const RelatosScreen = ({ isSkeleton, isDark }) => {
         Descubre las leyendas transmitidas de generación en generación que dan forma a nuestra mitología amazónica.
       </p>
       
-      <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         {RELATOS.map(relato => (
           <Skeleton key={relato.id} name="relato-card" loading={isSkeleton} animate={true} color={isDark ? '#262626' : '#e0e0e0'}>
             <div className="group bg-white dark:bg-[#1e1e1e] rounded-[2rem] shadow-md hover:shadow-2xl border border-stone-100 dark:border-white/5 overflow-hidden flex flex-col md:flex-row transition-all hover:-translate-y-1 duration-300 min-h-[220px]">
