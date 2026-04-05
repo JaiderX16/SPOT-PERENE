@@ -3,35 +3,39 @@ import { Sun, Heart } from 'lucide-react';
 import { VALORES } from '../data/culturalData';
 
 const ValoresScreen = () => (
-  <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <div className="relative h-60 rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-emerald-800 via-green-600 to-yellow-500 dark:from-emerald-950 dark:via-green-900 dark:to-yellow-700 flex flex-col justify-end p-7 text-white transform transition-transform hover:scale-[1.02] duration-300">
-      <div className="absolute top-0 right-0 p-4 opacity-30">
-        <Sun className="w-24 h-24 text-yellow-200 dark:text-yellow-400" />
+  <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="relative h-64 rounded-[2rem] overflow-hidden shadow-2xl flex flex-col justify-end p-8 text-white group">
+      {/* Background Image that slowly pans */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1547471080-7fc2caa6f17f?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-[10s] ease-linear"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-emerald-950 via-emerald-900/40 to-transparent"></div>
+      
+      <div className="absolute top-0 right-0 p-6 opacity-30">
+        <Sun className="w-24 h-24 text-yellow-200" />
       </div>
-      <h1 className="text-4xl font-extrabold mb-2 relative z-10 drop-shadow-md">Identidad Viva</h1>
-      <p className="text-green-50 opacity-95 text-sm font-medium relative z-10 drop-shadow">
-        Descubre el alma de Perené. Un viaje a través de nuestros valores y herencia milenaria.
+      
+      <h1 className="text-5xl font-black mb-3 relative z-10 drop-shadow-lg tracking-tight">Identidad Viva</h1>
+      <p className="text-emerald-50 opacity-95 text-base md:text-lg font-medium relative z-10 drop-shadow-md max-w-2xl">
+        Descubre el alma de Perené. Un viaje inmersivo a través de nuestros valores y herencia milenaria protegida por la comunidad.
       </p>
     </div>
 
     <div>
-      <h2 className="text-2xl font-bold text-amber-900 dark:text-amber-400 mb-3 flex items-center gap-2">
-        <Heart className="w-6 h-6 text-red-500 dark:text-red-400" />
+      <h2 className="text-3xl font-black text-emerald-900 dark:text-emerald-400 mb-6 flex items-center gap-3">
+        <Heart className="w-8 h-8 text-red-500" />
         Nuestros Valores
       </h2>
-      <p className="text-sm text-amber-800 dark:text-amber-200 mb-5 bg-amber-50 dark:bg-amber-950/40 p-4 rounded-2xl border border-amber-200/60 dark:border-amber-700/30 shadow-sm">
-        En Perené, influenciado fuertemente por comunidades como los <strong className="text-amber-900 dark:text-amber-400">Asháninka</strong>, destacan:
-      </p>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {VALORES.map(val => (
-          <div key={val.id} className="bg-white dark:bg-[#1e1e1e] p-5 rounded-2xl shadow-sm hover:shadow-md border border-stone-100 dark:border-white/5 flex items-start gap-4 transition-all hover:-translate-y-1 duration-300">
-            <div className={`flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-2xl ${val.bg} ${val.color} text-2xl shadow-inner`}>
-              {val.icon}
+          <div key={val.id} className="group bg-white dark:bg-[#1e1e1e] rounded-[2rem] shadow-sm hover:shadow-xl border border-stone-100 dark:border-white/5 overflow-hidden flex flex-col transition-all hover:-translate-y-2 duration-300 relative cursor-pointer h-72">
+            <div className="absolute inset-0">
+              <img src={val.image} alt={val.title} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10"></div>
             </div>
-            <div>
-              <h3 className="font-bold text-stone-800 dark:text-stone-100 mb-1">{val.title}</h3>
-              <p className="text-sm text-stone-500 dark:text-stone-400 leading-snug">{val.desc}</p>
+            
+            <div className="relative z-10 flex flex-col h-full justify-end p-6">
+              <h3 className="font-bold text-white text-xl mb-2 drop-shadow-md">{val.title}</h3>
+              <p className="text-sm text-stone-200 leading-relaxed opacity-90">{val.desc}</p>
             </div>
           </div>
         ))}

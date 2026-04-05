@@ -4,22 +4,25 @@ import { COSTUMBRES } from '../data/culturalData';
 
 const CostumbresScreen = () => (
   <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <div className="bg-gradient-to-r from-amber-900 to-stone-800 dark:from-amber-950 dark:to-stone-900 p-6 rounded-3xl shadow-lg text-white">
-      <h2 className="text-3xl font-extrabold mb-2 flex items-center gap-2">
-        <Leaf className="w-7 h-7 text-green-400 dark:text-green-500" /> Costumbres
-      </h2>
-      <p className="text-stone-300 text-sm font-medium">Prácticas y estilo de vida arraigados profundamente en nuestra tierra.</p>
+    <div className="bg-gradient-to-r from-emerald-900 to-stone-800 p-8 rounded-[2rem] shadow-xl text-white relative overflow-hidden group">
+      <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518182170546-076616fd4cb8?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center group-hover:scale-105 transition-transform duration-[10s]"></div>
+      <div className="relative z-10">
+        <h2 className="text-4xl font-black mb-3 flex items-center gap-3">
+          <Leaf className="w-8 h-8 text-green-400" /> Costumbres
+        </h2>
+        <p className="text-stone-300 text-base md:text-lg font-medium max-w-xl">Prácticas y estilo de vida arraigados profundamente en nuestra tierra y el día a día comunitario.</p>
+      </div>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
       {COSTUMBRES.map(costumbre => (
-        <div key={costumbre.id} className={`bg-white dark:bg-[#1e1e1e] p-5 rounded-2xl shadow-sm hover:shadow-md border-l-4 ${costumbre.border} flex gap-4 items-center transition-all hover:-translate-y-1 duration-300 border border-y-stone-100 border-r-stone-100 dark:border-y-white/5 dark:border-r-white/5`}>
-          <div className="flex-shrink-0 bg-stone-50 dark:bg-white/5 border border-stone-100 dark:border-white/10 p-2 rounded-full text-3xl w-14 h-14 flex items-center justify-center shadow-sm">
-            {costumbre.icon}
-          </div>
-          <div>
-            <h3 className="font-bold text-stone-800 dark:text-stone-100 text-lg mb-1">{costumbre.title}</h3>
-            <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed">{costumbre.desc}</p>
+        <div key={costumbre.id} className="group bg-white dark:bg-[#1a1a1a] h-64 rounded-[2rem] shadow-md hover:shadow-2xl overflow-hidden flex relative transition-all hover:-translate-y-2 duration-300">
+          <img src={costumbre.image} alt={costumbre.title} className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 group-hover:rotate-1 transition-all duration-700" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"></div>
+          
+          <div className="relative z-10 flex flex-col justify-center p-8 w-2/3">
+            <h3 className="font-black text-white text-2xl mb-3 leading-tight">{costumbre.title}</h3>
+            <p className="text-sm text-stone-200 leading-relaxed font-medium">{costumbre.desc}</p>
           </div>
         </div>
       ))}

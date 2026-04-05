@@ -4,21 +4,28 @@ import { RELATOS } from '../data/culturalData';
 
 const RelatosScreen = () => (
   <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-    <h2 className="text-3xl font-extrabold text-blue-900 dark:text-blue-400 mb-2 flex items-center gap-2">
-      <BookOpen className="w-7 h-7 text-blue-600 dark:text-blue-400" />
-      Relatos (Leyendas)
+    <h2 className="text-4xl font-black text-blue-900 dark:text-blue-400 mb-2 flex items-center gap-3">
+      <BookOpen className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+      Nuestros Relatos
     </h2>
-    <div className="bg-blue-50/80 dark:bg-blue-900/20 rounded-2xl p-4 mb-6 flex items-start gap-3 border border-blue-100 dark:border-blue-800/30 shadow-sm">
-       <span className="text-2xl">🗣️</span>
-       <p className="text-sm font-medium text-blue-800 dark:text-blue-200 leading-relaxed">Suelen transmitirse de forma oral de generación en generación, manteniendo viva la memoria.</p>
-    </div>
+    <p className="text-base font-medium text-stone-600 dark:text-stone-300 leading-relaxed mb-8 max-w-2xl">
+      Descubre las leyendas transmitidas de generación en generación que dan forma a nuestra mitología amazónica.
+    </p>
     
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div className="flex flex-col gap-6">
       {RELATOS.map(relato => (
-        <div key={relato.id} className="bg-white dark:bg-[#1e1e1e] rounded-3xl shadow-sm hover:shadow-lg border border-stone-100 dark:border-white/5 p-6 flex flex-col items-center text-center transition-all hover:-translate-y-1 duration-300">
-          <span className="text-5xl block mb-4 bg-stone-50 dark:bg-white/5 p-5 rounded-full shadow-inner">{relato.icon}</span>
-          <h3 className={`font-bold text-xl mb-2 ${relato.color}`}>{relato.title}</h3>
-          <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed">{relato.desc}</p>
+        <div key={relato.id} className="group bg-white dark:bg-[#1e1e1e] rounded-[2rem] shadow-md hover:shadow-2xl border border-stone-100 dark:border-white/5 overflow-hidden flex flex-col md:flex-row transition-all hover:-translate-y-1 duration-300 min-h-[220px]">
+          <div className="md:w-2/5 relative overflow-hidden h-48 md:h-auto">
+             <img src={relato.image} alt={relato.title} className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[8s]" />
+          </div>
+          <div className="p-8 md:w-3/5 flex flex-col justify-center bg-stone-50/50 dark:bg-transparent">
+            <span className="text-sm font-bold tracking-widest text-blue-500 uppercase mb-2">Mito Origen</span>
+            <h3 className="font-black text-3xl mb-4 text-stone-800 dark:text-stone-100">{relato.title}</h3>
+            <p className="text-base text-stone-600 dark:text-stone-300 leading-relaxed max-w-lg">{relato.desc}</p>
+            <button className="mt-6 self-start px-6 py-2 bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-800/50 text-blue-800 dark:text-blue-300 font-bold rounded-full transition-colors text-sm">
+              Leer Historia Completa
+            </button>
+          </div>
         </div>
       ))}
     </div>
