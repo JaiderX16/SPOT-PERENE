@@ -1,0 +1,71 @@
+{
+  "breakpoints": {
+    "390": {
+      "name": "screen-relatos",
+      "viewportWidth": 342,
+      "width": 342,
+      "height": 1590,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          80,
+          8
+        ],
+        [
+          0,
+          88,
+          100,
+          78,
+          8
+        ]
+      ]
+    },
+    "820": {
+      "name": "screen-relatos",
+      "viewportWidth": 770,
+      "width": 770,
+      "height": 876,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          40,
+          8
+        ],
+        [
+          0,
+          48,
+          87.2727,
+          52,
+          8
+        ]
+      ]
+    },
+    "1440": {
+      "name": "screen-relatos",
+      "viewportWidth": 958,
+      "width": 958,
+      "height": 876,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          40,
+          8
+        ],
+        [
+          0,
+          48,
+          70.1461,
+          52,
+          8
+        ]
+      ]
+    }
+  },
+  "_hash": "ea3d15a2749e380b564b1eb965b4d8ad"
+}

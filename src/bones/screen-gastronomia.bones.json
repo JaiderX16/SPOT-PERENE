@@ -1,0 +1,71 @@
+{
+  "breakpoints": {
+    "390": {
+      "name": "screen-gastronomia",
+      "viewportWidth": 342,
+      "width": 342,
+      "height": 1898,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          36,
+          8
+        ],
+        [
+          0,
+          40,
+          100,
+          20,
+          8
+        ]
+      ]
+    },
+    "820": {
+      "name": "screen-gastronomia",
+      "viewportWidth": 770,
+      "width": 770,
+      "height": 1259,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          36,
+          8
+        ],
+        [
+          0,
+          40,
+          100,
+          20,
+          8
+        ]
+      ]
+    },
+    "1440": {
+      "name": "screen-gastronomia",
+      "viewportWidth": 958,
+      "width": 958,
+      "height": 882,
+      "bones": [
+        [
+          0,
+          0,
+          100,
+          36,
+          8
+        ],
+        [
+          0,
+          40,
+          100,
+          20,
+          8
+        ]
+      ]
+    }
+  },
+  "_hash": "71278082adbd68eda89d435552c56933"
+}

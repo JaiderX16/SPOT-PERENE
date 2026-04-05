@@ -1,0 +1,50 @@
+{
+  "breakpoints": {
+    "390": {
+      "name": "screen-costumbres",
+      "viewportWidth": 342,
+      "width": 342,
+      "height": 1340,
+      "bones": [
+        [
+          0,
+          212,
+          100,
+          20,
+          8
+        ]
+      ]
+    },
+    "820": {
+      "name": "screen-costumbres",
+      "viewportWidth": 770,
+      "width": 770,
+      "height": 772,
+      "bones": [
+        [
+          0,
+          196,
+          100,
+          20,
+          8
+        ]
+      ]
+    },
+    "1440": {
+      "name": "screen-costumbres",
+      "viewportWidth": 958,
+      "width": 958,
+      "height": 772,
+      "bones": [
+        [
+          0,
+          196,
+          100,
+          20,
+          8
+        ]
+      ]
+    }
+  },
+  "_hash": "fcbc89379f38997f591d2e5880778c56"
+}

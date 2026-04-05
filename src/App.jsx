@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Skeleton } from 'boneyard-js/react';
 import { 
   Heart, 
   Users, 
@@ -7,7 +8,8 @@ import {
   BookOpen, 
   MapPin, 
   Sun,
-  Moon
+  Moon,
+  Loader
 } from 'lucide-react';
 
 // Importar los componentes separados
@@ -20,8 +22,12 @@ import RelatosScreen from './screens/RelatosScreen';
 import LugaresScreen from './screens/LugaresScreen';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('valores');
+  const [activeTab, setActiveTab] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('tab') || 'valores';
+  });
   const [isDark, setIsDark] = useState(false);
+  const [isSkeleton, setIsSkeleton] = useState(false);
 
   return (
     <div className={`h-[100dvh] flex justify-center font-sans selection:bg-emerald-200 selection:text-emerald-900 ${isDark ? 'dark bg-stone-900' : 'bg-stone-200/50'}`}>
@@ -65,24 +71,35 @@ export default function App() {
             </div>
           </div>
           
-          {/* Botón Toggle Dark Mode */}
-          <button 
-            onClick={() => setIsDark(!isDark)}
-            className="w-10 h-10 rounded-full flex items-center justify-center bg-stone-100 dark:bg-white/10 text-stone-600 dark:text-yellow-400 hover:scale-105 transition-all shadow-sm"
-            aria-label="Alternar tema oscuro"
-          >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
+          <div className="flex items-center gap-2">
+            {/* Botón Toggle Skeleton */}
+            <button 
+              onClick={() => setIsSkeleton(!isSkeleton)}
+              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-sm ${isSkeleton ? 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-400' : 'bg-stone-100 dark:bg-white/10 text-stone-600 dark:text-stone-400'}`}
+              aria-label="Alternar modo carga"
+            >
+              <Loader className={`w-5 h-5 ${isSkeleton ? 'animate-spin' : ''}`} />
+            </button>
+
+            {/* Botón Toggle Dark Mode */}
+            <button 
+              onClick={() => setIsDark(!isDark)}
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-stone-100 dark:bg-white/10 text-stone-600 dark:text-yellow-400 hover:scale-105 transition-all shadow-sm"
+              aria-label="Alternar tema oscuro"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+          </div>
         </header>
 
         {/* Área de Contenido */}
         <main className="flex-1 overflow-y-auto px-6 py-8 pb-36">
-          {activeTab === 'valores' && <ValoresScreen />}
-          {activeTab === 'costumbres' && <CostumbresScreen />}
-          {activeTab === 'danzas' && <DanzasScreen />}
-          {activeTab === 'gastronomia' && <GastronomiaScreen />}
-          {activeTab === 'relatos' && <RelatosScreen />}
-          {activeTab === 'lugares' && <LugaresScreen />}
+          {activeTab === 'valores' && <ValoresScreen isSkeleton={isSkeleton} isDark={isDark} />}
+          {activeTab === 'costumbres' && <CostumbresScreen isSkeleton={isSkeleton} isDark={isDark} />}
+          {activeTab === 'danzas' && <DanzasScreen isSkeleton={isSkeleton} isDark={isDark} />}
+          {activeTab === 'gastronomia' && <GastronomiaScreen isSkeleton={isSkeleton} isDark={isDark} />}
+          {activeTab === 'relatos' && <RelatosScreen isSkeleton={isSkeleton} isDark={isDark} />}
+          {activeTab === 'lugares' && <LugaresScreen isSkeleton={isSkeleton} isDark={isDark} />}
         </main>
 
         {/* Barra de Navegación (Se mantiene oscura en ambos modos para estilo premium) */}
